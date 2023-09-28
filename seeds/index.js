@@ -3,13 +3,10 @@ const cities = require("./cities");
 const { places, descriptors } = require("./seedHelpers");
 const Campground = require("../models/campground");
 
-mongoose.connect(
-  "mongodb+srv://dNvidia11:dNvidia11@yelp-camp.jljm3gs.mongodb.net/?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(`mongodb://root:example@localhost:27017/`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:")); // error checking
